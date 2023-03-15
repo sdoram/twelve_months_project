@@ -10,21 +10,22 @@ import time
 
 app = Flask(__name__)
 
-
+# 책 리뷰 작성 페이지
 @app.route('/review')
 def content2():
     return render_template('review.html')
 
-
+# 메인 페이지
 @app.route('/')
 def home():
     return render_template('main.html')
 
-
+# 팀원 정보 입력 페이지
 @app.route('/record')
 def content3():
     return render_template('record.html')
 
+# 책 정보 저장하기
 @app.route("/books", methods=["POST"])
 def movie_post():
     url_receive = request.form['url_give']
@@ -58,24 +59,25 @@ def movie_post():
     db.books.insert_one(doc)
     return jsonify({'msg': '저장 완료!'})
 
-
+# 책 정보 가져오기
 @app.route("/books", methods=["GET"])
 def movie_get():
     book_list = list(db.books.find({}, {'_id': False}))
     return jsonify({'books': book_list})
 
-
+# 팀원 정보 저장하기 
 @app.route("/members", methods=["POST"])
 def members_post():
-    image_receive = request.form['image_give']
+    img_receive = request.form['img_give']
     name_receive = request.form['name_give']
     mbti_receive = request.form['mbti_give']
     book_receive = request.form['book_give']
     blog_receive = request.form['blog_give']
+    #입력 시간 체크 함수
     time_receive = (time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
 
     doc = {
-        'image': image_receive,
+        'img': img_receive,
         'name': name_receive,
         'mbti': mbti_receive,
         'book': book_receive,
@@ -85,7 +87,7 @@ def members_post():
     db.members.insert_one(doc)
     return jsonify({'msg': '작성 완료!'})
 
-
+# 팀원 정보 가져오기
 @app.route("/show", methods=["GET"])
 def members_get():
     all_members = list(db.members.find({}, {'_id': False}))
