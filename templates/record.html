@@ -10,11 +10,6 @@
     <title>독서하는 12개월</title>
 
     <style>
-        .mycards {
-            max-width: 500px;
-        }
-    </style>
-    <style>
         .mytitle {
             display: flex;
             flex-direction: column;
@@ -25,6 +20,29 @@
             align-items: center;
             background-size: cover;
             background-position: center;
+
+        }
+
+
+        .add {
+            display: inline-block;
+            width: 170px;
+
+
+            background-color: transparent;
+            color: #E0C080;
+
+            border-radius: 50px;
+            border: 1px solid #E0C080;
+            align-items: center;
+            text-align: center;
+            margin-top: 300px;
+            padding: 10px 10px 10px 10px;
+        }
+
+        .add:hover {
+            background-color: #E0C080;
+            color: white
         }
 
         .box {
@@ -32,59 +50,94 @@
             margin: 50px auto 50px auto;
             padding: 20px 20px 20px 20px;
             box-shadow: 0px 0px 3px 0px gray;
+            justify-content: space-between
         }
+
 
         .find-btn {
             text-align: center;
+            margin-bottom: 10px;
         }
 
         .btn {
             display: inline-block;
             background-color: #E0C080;
+
+
+            width: 170px;
+            height: 35px;
+            border: 1px solid #E0C080;
+            background-color: #E0C080;
             color: white;
+
+            border-radius: 50px;
+
+            align-items: center;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: #E0C080
+        }
+
+        .btn:focus {
+            outline: none;
         }
     </style>
     <script>
         function record() {
-            let name = $("#name").val();
             let image = $("#image").val();
+            let name = $("#name").val();
             let mbti = $("#mbti").val();
             let book = $("#email").val();
             let blog = $("#blog").val();
 
-            let formData = new FormData();
-            formData.append("name_give", name);
-            formData.append("image_give", image);
-            formData.append("mbti_give", mbti);
-            formData.append("book_give", book);
-            formData.append("blog_give", blog);
+            if (image == '') {
+                alert('사진URL을 입력해주세요!')
+            } else if (name == '') {
+                alert('이름을 입력해주세요!')
+            } else if (mbti == '') {
+                alert('mbti를 입력해주세요!')
+            } else if (book == '') {
+                alert('책제목을 입력해주세요!')
+            } else if (blog == '') {
+                alert('블로그 주소를 입력해주세요!')
+            } else {
 
-            fetch('/members', {method: "POST", body: formData,}).then((res) => res.json()).then((data) => {
-                console.log(data);
-                alert(data["msg"]);
-                {#완료 후 메인페이지 이동#}
-                window.location.href='/'
+                let formData = new FormData();
+                formData.append("name_give", name);
+                formData.append("image_give", image);
+                formData.append("mbti_give", mbti);
+                formData.append("book_give", book);
+                formData.append("blog_give", blog);
+
+                fetch('/members', {method: "POST", body: formData,}).then((res) => res.json()).then((data) => {
+                        console.log(data);
+                        alert(data["msg"]);
+                        window.location.href='/main.html'
+                    }
+                )
+                ;
+            }
+
+
+            $(document).ready(function () {
+                listing();
             });
-        }
 
+            function listing() {
+                fetch('/show').then((res) => res.json()).then((data) => {
+                    let rows = data['result']
+                    console.log(rows)
+                    $('#mycards').empty()
+                    rows.forEach((a) => {
+                        let img = a['img']
+                        let name = a['name']
+                        let mbti = a['mbti']
+                        let book = a['book']
+                        let blog = a['blog']
 
-        $(document).ready(function () {
-            listing();
-        });
-
-        function listing() {
-            fetch('/show').then((res) => res.json()).then((data) => {
-                let rows = data['result']
-                console.log(rows)
-                $('#mycards').empty()
-                rows.forEach((a) => {
-                    let img = a['img']
-                    let name = a['name']
-                    let mbti = a['mbti']
-                    let book = a['book']
-                    let blog = a['blog']
-
-                    let temp_html = ` <div class="mycard" style="max-width: 2000px;">
+                        let temp_html = ` <div class="mycard" style="max-width: 2000px;">
                                         <div class="row g-0">
                                             <div class="col-md-6">
                                                 <img src="${img}" class="img-fluid rounded-start" alt="">
@@ -100,10 +153,11 @@
                                             </div>
                                         </div>
                                     </div>`
-                    $('#mycards').append(temp_html)
+                        $('#mycards').append(temp_html)
+                    });
                 });
-            });
-        };
+            }
+        }
     </script>
 </head>
 
@@ -111,7 +165,7 @@
 <div>
     {#메인 페이지 이동#}
     <div class="mytitle" onclick="location.href='/'"></div>
-    <button onclick="location.href='/'">메인 페이지</button>
+    <button onclick="location.href='/content2'" class="add">메인가기</button>
 
     <div class="box">
         <div class="form-floating">
@@ -129,7 +183,7 @@
         <div class="form-floating">
             <textarea class="form-control" placeholder="Leave a comment here" id="mbti"
                       style="margin-bottom: 30px;"></textarea>
-            <label for=""> MBTI </label>
+            <label for="">MBTI </label>
         </div>
 
         <div class="form-floating">
@@ -150,5 +204,6 @@
     </div>
 </div>
 <div class="mycards" id="mycards">
+</div>
 </body>
 </html>
