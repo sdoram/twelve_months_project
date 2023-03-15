@@ -1,90 +1,154 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>독서하는 12개월</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>독서하는 12개월</title>
+
+    <style>
+        .mycards {
+            max-width: 500px;
+        }
+    </style>
+    <style>
+        .mytitle {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 300px;
+            width: 100%;
+            background-image: url("https://i.ibb.co/GCqBHfy/mainlogo001.png");
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .box {
+            width: 500px;
+            margin: 50px auto 50px auto;
+            padding: 20px 20px 20px 20px;
+            box-shadow: 0px 0px 3px 0px gray;
+        }
+
+        .find-btn {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #E0C080;
+            color: white;
+        }
+    </style>
+    <script>
+        function record() {
+            let name = $("#name").val();
+            let image = $("#image").val();
+            let mbti = $("#mbti").val();
+            let book = $("#email").val();
+            let blog = $("#blog").val();
+
+            let formData = new FormData();
+            formData.append("name_give", name);
+            formData.append("image_give", image);
+            formData.append("mbti_give", mbti);
+            formData.append("book_give", book);
+            formData.append("blog_give", blog);
+
+            fetch('/members', {method: "POST", body: formData,}).then((res) => res.json()).then((data) => {
+                console.log(data);
+                alert(data["msg"]);
+                {#완료 후 메인페이지 이동#}
+                window.location.href='/'
+            });
+        }
+
+
+        $(document).ready(function () {
+            listing();
+        });
+
+        function listing() {
+            fetch('/show').then((res) => res.json()).then((data) => {
+                let rows = data['result']
+                console.log(rows)
+                $('#mycards').empty()
+                rows.forEach((a) => {
+                    let img = a['img']
+                    let name = a['name']
+                    let mbti = a['mbti']
+                    let book = a['book']
+                    let blog = a['blog']
+
+                    let temp_html = ` <div class="mycard" style="max-width: 2000px;">
+                                        <div class="row g-0">
+                                            <div class="col-md-6">
+                                                <img src="${img}" class="img-fluid rounded-start" alt="">
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">${name}</h5>
+                                                    <p class="card-text">${book}</p>
+                                                    <p class="card-text">${blog}</p>
+                                                    <p class="card-text">${mbti}</p>
+                                                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>`
+                    $('#mycards').append(temp_html)
+                });
+            });
+        };
+    </script>
 </head>
+
 <body>
-  <div>
-    <div class="mytitle"></div>
+<div>
+    {#메인 페이지 이동#}
+    <div class="mytitle" onclick="location.href='/'"></div>
+    <button onclick="location.href='/'">메인 페이지</button>
+
     <div class="box">
-    <div class="form-floating mb-3">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"style="margin-bottom: 30px;">
-      <label for="floatingInput">사진 url</label>
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="img"
+                      style="margin-bottom: 30px;"></textarea>
+            <label for="">사진url</label>
+        </div>
+
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="name"
+                      style="margin-bottom: 30px;"></textarea>
+            <label for="">이름</label>
+        </div>
+
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="mbti"
+                      style="margin-bottom: 30px;"></textarea>
+            <label for=""> MBTI </label>
+        </div>
+
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="book"
+                      style="margin-bottom: 30px;"></textarea>
+            <label for="">책추천</label>
+        </div>
+
+        <div class="form-floating">
+            <textarea class="form-control" placeholder="Leave a comment here" id="blog"
+                      style="margin-bottom: 30px;"></textarea>
+            <label for="">블로그주소</label>
+        </div>
+
+        <div class="find-btn">
+            <button type="button" onclick="record()" class="btn btn-light">기록하기</button>
+        </div>
     </div>
-      <div class="form-floating">
-        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="margin-bottom: 30px;"></textarea>
-        <label for="floatingTextarea">이름</label>
-      </div>
-      <div class="form-floating">
-        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="margin-bottom: 30px;"></textarea>
-        <label for="floatingTextarea"> MBTI </label>
-      </div>
-      <div class="form-floating">
-        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="margin-bottom: 30px;"></textarea>
-        <label for="floatingTextarea">책추천</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"style="margin-bottom: 30px;">
-        <label for="floatingInput">블로그 주소</label>
-      </div>
-      <div class="find-btn">
-        <button type="button" onclick="record()" class="btn btn-light">기록하기</button>
-      </div>
-    </div>
+</div>
+<div class="mycards" id="mycards">
 </body>
-<script>
-  $(document).ready(function () {
-    show_get();
-  });
-  function record() {
-    let image = $('#image').val()
-    let name = $('#name').val()
-    let mbti = $('#mbti').val()
-    let email = $('#email').val()
-    let blog = $('#blog').val()
-    let formData = new FormData();
-    formData.append("image_give", image)
-    formData.append("name_give", name)
-    formData.append("mbti_give", mbti)
-    formData.append("email_give", email)
-    formData.append("blog_give", blog)
-    fetch("/test", { method: "POST", body: formData }).then(res => res.json()).then(data => {
-      alert(data["msg"]);
-    })
-  }
-</script>
-<style>
-  .mytitle {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 300px;
-    width: 100%;
-    background-image: url("https://i.ibb.co/GCqBHfy/mainlogo001.png");
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-  }
-  .box {
-    width: 500px;
-    margin: 50px auto 50px auto;
-    padding: 20px 20px 20px 20px;
-    box-shadow: 0px 0px 3px 0px gray;
-    justify-content: space-between
-  }
-  .find-btn {
-    text-align: center;
-    margin-top: 20px;
-  }
-  .btn {
-    display: inline-block;
-    background-color: #E0C080;
-    color: white;
-  }
-</style>
 </html>
