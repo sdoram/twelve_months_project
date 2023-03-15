@@ -47,13 +47,18 @@ def movie_post():
         "#contents > div.prod_detail_header > div > div.prod_detail_view_wrap > div.prod_detail_view_area > div:nth-child(1) > div > div.prod_author_box.auto_overflow_wrap > div.auto_overflow_contents > div > div > a:nth-child(1)")
     author_name = author_tag.text
 
+    # 입력 시간 체크 함수 추가
+    time_receive = (time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
+
     doc = {
         'image': img_url,
         'title': title_name,
         'author': author_name,
         'star': star_receive,
         'reviewer': reviewer_receive,
-        'comment': comment_receive
+        'comment': comment_receive,
+        # 추가
+        'time': time_receive
     }
 
     db.books.insert_one(doc)

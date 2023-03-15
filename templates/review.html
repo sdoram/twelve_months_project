@@ -254,10 +254,28 @@
         .mybtns > button {
             margin-right: 10px;
         }
+        .mybtn {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 10px auto;
+        }
+        .mybtn > .add {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: 0px 10px 0 10px;
+            width: 170px;
+            height: 35px;
 
-        .footer {
-            padding: 60px;
-            text-align: center;
+            font-size: 20px;
+            background-color: transparent;
+            color: #B68A30;
+
+            border-radius: 50px;
+            border: 2px solid #B68A30;
         }
 
     </style>
@@ -280,6 +298,8 @@
                         let image = rows[i]['image']
                         let author = rows[i]['author']
                         let reviewer = rows[i]['reviewer']
+                        {# 추가 #}
+                        let time = rows[i]['time']
                         let star_image = '🌟'.repeat(star)
 
 
@@ -293,6 +313,7 @@
                                                     <p>${star_image}</p>
                                                     <p class="mycomment">${comment}</p>
                                                     <p class="mycomment"> 🎀 ${reviewer} 🎀 </p>
+                                                    <p class="mycomment">${time}</p>
 
                                                 </div>
                                             </div>
@@ -372,9 +393,11 @@
 <!-- 클릭시 메인 페이지 이동  -->
 <div class="mytitle" onclick="location.href='/'">
     <br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <button onclick="location.href='/'"> 홈</button>
-    <button onclick="location.href='/record'">독서록 쓰기</button>
 
+</div>
+<div class="mybtn">
+    <button class="add" onclick="location.href='/'"> 홈</button>
+    <button class="add" onclick=open_box()>독서록 쓰기</button>
 </div>
 <!--새창 띄워서 교보문고 검색하는 기능 만듦 -->
 <div class="search" style="margin-bottom: 20px; margin: 0px auto; text-align: center; ">
