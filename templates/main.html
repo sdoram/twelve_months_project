@@ -269,6 +269,7 @@
             text-align: center;
         }
 
+
         label[for*=tab] {
             display: block;
             padding: 10px;
@@ -303,12 +304,39 @@
         input[id="tab03"]:checked ~ .btn > label[for="tab03"] {
             background: red;
         }
+
+        .mybtn {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+        .mybtn > .add {
+            display: flex;
+            {#flex-direction: row;#}
+            justify-content: center;
+            align-items: center;
+            margin: 0px 10px 0 10px;
+            width: 170px;
+            height: 35px;
+
+            font-size: 20px;
+            background-color: transparent;
+            color: #B68A30;
+
+            border-radius: 50px;
+            border: 2px solid #B68A30;
+        }
+
+
     </style>
     <script>
         $(document).ready(function () {
             listing();
         });
         {#팀원 정보 가져오기#}
+
         function listing() {
             fetch('/show').then((res) => res.json()).then((data) => {
                 let rows = data['result']
@@ -385,8 +413,13 @@
 
 <div class="mytitle" onclick="location.href='/'"><!-- 상단 로고 -->
     <br><br><br><br><br><br><br><br><br><br><br><br><br>
-    <button onclick="location.href='/record'"> 팀원 추가</button>
-    <button onclick="location.href='/review'">독서록 쓰기</button>
+</div>
+
+<div class="test">
+    <div class="mybtn">
+        <button href="#" class="add" onclick="location.href='/record'"> 팀원 추가</button>
+        <button href="#" class="add" onclick="location.href='/review'">독서록 쓰기</button>
+    </div>
 </div>
 
 <div class="ALLPHOTO"> <!-- 사진 전체 묶음 -->
