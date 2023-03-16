@@ -70,7 +70,7 @@ def movie_get():
     book_list = list(db.books.find({}, {'_id': False}))
     return jsonify({'books': book_list})
 
-# 팀원 정보 저장하기 
+# 팀원 정보 저장하기
 @app.route("/members", methods=["POST"])
 def members_post():
     img_receive = request.form['img_give']
@@ -98,6 +98,12 @@ def members_get():
     all_members = list(db.members.find({}, {'_id': False}))
     return jsonify({'result': all_members})
 
+@app.route("/delete", methods=["POST"])
+def members_delete():
+    name = request.form['name_give']
+    print(name)
+    db.members.delete_one({'name':name})
+    return jsonify({'msg': '삭제 완료!'})
 
 if __name__ == '__main__':
-    app.run('0.0.0.0', port=5003, debug=True)
+    app.run('0.0.0.0', port=5000, debug=True)

@@ -14,12 +14,45 @@
           href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAx1JREFUWEftl0toE0Ech3/b3dnNpkn6SJpoK/aBqbVUaEuxUl8garVYUVpFRCl6UfTkyZvmIJ4KVcEnVisq4gNSFQSLaBVvCsWCJ7FY37bFNkmT3Z3Z3ZFECz5AwbTBQ+YysMPsfPPNLv/fCPjWhOvL6nza+8lGO8aXQLeCArXyYXHx+/i0dFzOiTNVfKGrOXffVDufdfYNxoXkm8OLF5fpH6PtNKq3c1uskQoKc9WSAEiuEzZRwCWSNgCnOozhN9DffYhSYvXreeR4eG7xI+H4ukZP4YtYB4/Q/baFcrW+Fp7Vy5FbNgfE5YQtTRMA06G/fIWJO/cx+fx5nErmufEKV6fQXVHTIH7RDyHB1iv+Isze3QHflg0Q5fR3PaWNcw7TtDjTdEw8eCSMdl9BbPh1v+aVQsJp37xWopkhkdr1SsCPkp3bMGvjWsgOghyRp63eEkVw2QFLELmmU8SGhoXPp3ow2nd/QFNyQsLR/PINqmGHFJPXCYQgd0ElPNWVcLtVqIqUNoBNCKQ5xXDU14IF/Ih8HEcSYKQ3/DvA1GqSJHKv2wWPw5H6SP+1WZzDAiB6C+BctRRSy2okJOffAWQioaSwAD6X61/XTs2zuA3dNKFRBhR5oWxvg1VXj5Gzl/9sQCESSn1eBPLz0gJITja5jUhCQ5wyKFtbgeY1+Nx9LXMASYiYYWAikYDc3gKhZS0+nb+RYQBGEYknQNrWZQGyBrIGsgayBrIG/h8DY7d7nxruXyLZVPGfzjyQKse/VsOLN63xu71h6iOHf8qEGQFobbFG7z0cHLna0/WuQgpnHIBs3RSNj4ydGDp4oGvXwMBoxgGcHZuHRDUvtHB+6aXUnfDHWD6TRxDVNMibmqlzR9tt1V1wJBgsG0gBXCivXIYxGhJ0e+VMAHBwRHUDcUZj8opFj9V9HScnGXvY1NSkpQBuNdYEIm/pXjtC94Da/uTD6fwLDNNERNM0Bv5ALvYd8/YcexwMBo2pzSYvHsKZqqoafGEbpRhrEBn3KERGqb8Qfk96sdzkFhIGZQnGXlGH2Mtk95Pmwb74j1n/K790smAB/Jv1AAAAAElFTkSuQmCC">
     <title>독서하는 12개월</title>
     <style>
+
+
         @font-face {
             font-family: 'HSBombaram21-Regular';
             src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/HSBombaram21-Regular.woff2') format('woff2');
             font-weight: normal;
             font-style: normal;
         }
+
+        @font-face {
+            font-family: 'GangwonEdu_OTFBoldA';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            /* 사이드바 하단 앨범 보기 및 독서 리뷰 폰트 */
+            font-family: 'establishRoomNo703OTF';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRoomNo703OTF.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'SangSangYoungestDaughter';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/SangSangYoungestDaughter.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            /* 폰트 교보문고, 사이드바 팀 이름 폰트 적용 */
+            font-family: 'KyoboHandwriting2021sjy';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KyoboHandwriting2021sjy.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         .mytitle {
             color: white;
 
@@ -165,11 +198,50 @@
         input[id="menuicon"]:checked + label + div {
             right: 0;
         }
+
         .footer {
             font-family: 'HSBombaram21-Regular';
             padding: 60px;
             text-align: center;
         }
+
+        /* mytitle에서 분리한 스타일 */
+        .mybtn {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 10px auto;
+        }
+
+        .mybtn > .add {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: 0px 10px 0 10px;
+            width: 170px;
+            height: 35px;
+
+            font-size: 20px;
+            background-color: transparent;
+            color: #B68A30;
+
+            border-radius: 50px;
+            border: 2px solid #B68A30;
+        }
+
+        .mybtn > button:hover {
+            background-color: #B68A30;
+            color: white;
+        }
+
+        /* 링크 색 변경, 밑줄 제거*/
+        .blog {
+            color: black;
+            text-decoration-line: none;
+        }
+
 
     </style>
     <script>

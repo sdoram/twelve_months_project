@@ -18,17 +18,50 @@
           href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAx1JREFUWEftl0toE0Ech3/b3dnNpkn6SJpoK/aBqbVUaEuxUl8garVYUVpFRCl6UfTkyZvmIJ4KVcEnVisq4gNSFQSLaBVvCsWCJ7FY37bFNkmT3Z3Z3ZFECz5AwbTBQ+YysMPsfPPNLv/fCPjWhOvL6nza+8lGO8aXQLeCArXyYXHx+/i0dFzOiTNVfKGrOXffVDufdfYNxoXkm8OLF5fpH6PtNKq3c1uskQoKc9WSAEiuEzZRwCWSNgCnOozhN9DffYhSYvXreeR4eG7xI+H4ukZP4YtYB4/Q/baFcrW+Fp7Vy5FbNgfE5YQtTRMA06G/fIWJO/cx+fx5nErmufEKV6fQXVHTIH7RDyHB1iv+Isze3QHflg0Q5fR3PaWNcw7TtDjTdEw8eCSMdl9BbPh1v+aVQsJp37xWopkhkdr1SsCPkp3bMGvjWsgOghyRp63eEkVw2QFLELmmU8SGhoXPp3ow2nd/QFNyQsLR/PINqmGHFJPXCYQgd0ElPNWVcLtVqIqUNoBNCKQ5xXDU14IF/Ih8HEcSYKQ3/DvA1GqSJHKv2wWPw5H6SP+1WZzDAiB6C+BctRRSy2okJOffAWQioaSwAD6X61/XTs2zuA3dNKFRBhR5oWxvg1VXj5Gzl/9sQCESSn1eBPLz0gJITja5jUhCQ5wyKFtbgeY1+Nx9LXMASYiYYWAikYDc3gKhZS0+nb+RYQBGEYknQNrWZQGyBrIGsgayBrIG/h8DY7d7nxruXyLZVPGfzjyQKse/VsOLN63xu71h6iOHf8qEGQFobbFG7z0cHLna0/WuQgpnHIBs3RSNj4ydGDp4oGvXwMBoxgGcHZuHRDUvtHB+6aXUnfDHWD6TRxDVNMibmqlzR9tt1V1wJBgsG0gBXCivXIYxGhJ0e+VMAHBwRHUDcUZj8opFj9V9HScnGXvY1NSkpQBuNdYEIm/pXjtC94Da/uTD6fwLDNNERNM0Bv5ALvYd8/YcexwMBo2pzSYvHsKZqqoafGEbpRhrEBn3KERGqb8Qfk96sdzkFhIGZQnGXlGH2Mtk95Pmwb74j1n/K790smAB/Jv1AAAAAElFTkSuQmCC">
     <title>독서하는 12개월</title>
     <style>
+
         @font-face {
             font-family: 'HSBombaram21-Regular';
             src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/HSBombaram21-Regular.woff2') format('woff2');
             font-weight: normal;
             font-style: normal;
         }
+
+        @font-face {
+            font-family: 'GangwonEdu_OTFBoldA';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            /* 사이드바 하단 앨범 보기 및 독서 리뷰 폰트 */
+            font-family: 'establishRoomNo703OTF';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRoomNo703OTF.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'SangSangYoungestDaughter';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/SangSangYoungestDaughter.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            /* 폰트 교보문고, 사이드바 팀 이름 폰트 적용 */
+            font-family: 'KyoboHandwriting2021sjy';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KyoboHandwriting2021sjy.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         .footer {
             padding: 60px;
             text-align: center;
             font-family: 'HSBombaram21-Regular';
         }
+
         /* 상단 로고 스타일 */
 
         .mytitle {
@@ -206,17 +239,12 @@
             transition: all .35s;
         }
 
+
         input[id="menuicon"]:checked + label + div {
             /* 사이드바랑 딸려 나오는 애 */
             right: 0;
         }
 
-        @font-face {
-            font-family: 'SangSangYoungestDaughter';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/SangSangYoungestDaughter.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
 
         .sidetop {
             /* 사이드바 상단 독서하는 12개월 폰트 */
@@ -227,13 +255,6 @@
 
         }
 
-        @font-face {
-            /* 폰트 교보문고, 사이드바 팀 이름 폰트 적용 */
-            font-family: 'KyoboHandwriting2021sjy';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KyoboHandwriting2021sjy.woff2') format('woff2');
-            font-weight: normal;
-            font-style: normal;
-        }
 
         .name {
             /* 폰트 교보문고, 사이드바 팀 이름 폰트 적용 */
@@ -261,20 +282,6 @@
             /* 버튼 누르르기 전 박스123 나오는 스타일, 아직 바디에 없음 */
             display: none;
         }
-
-        .condon {
-            width: 300px;
-            height: 300px;
-            background-color: #aaa;
-            display: none;
-        }
-
-        .btn {
-            /* 버튼 클릭시 */
-            padding: 10px;
-            text-align: center;
-        }
-
 
         label[for*=tab] {
             display: block;
@@ -311,13 +318,20 @@
             background: red;
         }
 
+        .mycards > .card-body > button:hover {
+            background-color: #b68a30;
+            color: white;
+        }
+
+        /* mytitle에서 분리한 스타일 */
         .mybtn {
             display: flex;
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            margin: auto;
+            margin: 0 auto 10px auto;
         }
+
         .mybtn > .add {
             display: flex;
             flex-direction: row;
@@ -334,16 +348,26 @@
             border-radius: 50px;
             border: 2px solid #B68A30;
         }
+
         .mybtn > button:hover {
             background-color: #B68A30;
             color: white;
         }
+
+        /* 링크 색 변경, 밑줄 제거*/
+        .blog {
+            color: black;
+            text-decoration-line: none;
+        }
+
+
     </style>
     <script>
         $(document).ready(function () {
             listing();
         });
         {#팀원 정보 가져오기#}
+
 
         function listing() {
             fetch('/show').then((res) => res.json()).then((data) => {
@@ -363,13 +387,16 @@
                                             <div class="col-md-6">
                                                 <img src="${img}" class="img-fluid rounded-start" alt="...">
                                             </div>
-                                            <div class="col-md-6">
-                                                <div class="card-body">
+                                            <div class="col-md-6" >
+                                                <div class="card-body" >
                                                     <h5 class="card-title">${name}</h5>
                                                     <p class="card-text">MBTI : ${mbti}</p>
                                                     <p class="card-text">책 추천 : ${book}</p>
-                                                    <p class="card-text">블로그 링크 ▶ ${blog}</p>
+                                                    <a class='blog' href="${blog}"target="_blank">블로그 링크 ▶ ${name}님 블로그</a>
                                                     <p class="card-text"><small class="text-muted">${time}</small></p>
+                                                    <br><br><br><br>
+                                                    <button class="delButton" onclick="del('${name}')" style="width: 60px; border:1px solid #b68a30; border-radius: 10px;color:#b68a30; background-color: white; ">
+                                                    삭제 </button>
                                                 </div>
                                             </div>
                                         </div>
@@ -378,6 +405,19 @@
                 });
             });
         };
+
+        function del(a) {
+            let name = a
+            let formData = new FormData();
+            formData.append("name_give", name);
+
+            fetch('/delete', {method: "POST", body: formData,}).then((res) => res.json()).then((data) => {
+                    console.log(data);
+                    alert(data["msg"]);
+                    window.location.href = '/'
+                }
+            )
+        }
     </script>
 </head>
 
@@ -423,11 +463,9 @@
     <br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 
-<div class="test">
-    <div class="mybtn">
-        <button href="#" class="add" onclick="location.href='/record'"> 팀원 추가</button>
-        <button href="#" class="add" onclick="location.href='/review'">독서록 쓰기</button>
-    </div>
+<div class="mybtn">
+    <button class="add" onclick="location.href='/record'"> 팀원 추가</button>
+    <button class="add" onclick="location.href='/review'">독서록 쓰기</button>
 </div>
 
 <div class="ALLPHOTO"> <!-- 사진 전체 묶음 -->
@@ -445,7 +483,7 @@
                         <p class="card-text"> 2. MBTI : INTJ</p>
                         <p class="card-text"> 3. 책 추천 : 홀로서기 심리학</p>
                         <p class="card-text"> 4. 팀 내 역할 : 프론트엔드, 메인페이지1, 1page 제작</p>
-                        <p class="card-text"> 5. 블로그 링크 ▶ https://ksw4060.tistory.com/3</p>
+                        <a class='blog' href="${blog}" target="_blank"> 5. 블로그 링크 ▶ https://ksw4060.tistory.com/3</a>
                         <p class="card-text"><small class="text-muted">이 게시물은 3분 전에 만들어 졌습니다</small></p>
                     </div>
                 </div>

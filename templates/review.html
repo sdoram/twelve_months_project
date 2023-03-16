@@ -19,12 +19,6 @@
 
 
     <style>
-        .footer {
-            padding: 60px;
-            text-align: center;
-            font-family: 'HSBombaram21-Regular';
-        }
-
 
         @font-face {
             font-family: 'HSBombaram21-Regular';
@@ -39,7 +33,6 @@
             font-weight: normal;
             font-style: normal;
         }
-
 
         @font-face {
             /* 사이드바 하단 앨범 보기 및 독서 리뷰 폰트 */
@@ -242,18 +235,13 @@
             border-radius: 10px;
         }
 
-        .mybtns {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-
-            margin-top: 20px;
+        .footer {
+            padding: 60px;
+            text-align: center;
+            font-family: 'HSBombaram21-Regular';
         }
 
-        .mybtns > button {
-            margin-right: 10px;
-        }
+        /* mytitle에서 분리한 스타일 */
         .mybtn {
             display: flex;
             flex-direction: row;
@@ -261,6 +249,7 @@
             align-items: center;
             margin: 0 auto 10px auto;
         }
+
         .mybtn > .add {
             display: flex;
             flex-direction: row;
@@ -277,9 +266,16 @@
             border-radius: 50px;
             border: 2px solid #B68A30;
         }
+
         .mybtn > button:hover {
             background-color: #B68A30;
             color: white;
+        }
+
+        /* 링크 색 변경, 밑줄 제거*/
+        .blog {
+            color: black;
+            text-decoration-line: none;
         }
 
     </style>
