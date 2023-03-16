@@ -141,6 +141,14 @@
             z-index: 1;
             transition: all .35s;
         }
+        .mybtns {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            margin-top: 20px;
+        }
 
         input[id="menuicon"]:checked + label + div {
             /* 사이드바랑 딸려 나오는 애 */
@@ -249,6 +257,9 @@
             align-items: center;
             margin: 0 auto 10px auto;
         }
+        .btn{
+            margin-left: 10px;
+        }
 
         .mybtn > .add {
             display: flex;
@@ -278,7 +289,10 @@
             text-decoration-line: none;
         }
 
-    </style>
+        /*카드 박스 거리 조절 */
+        .col {
+            margin-bottom: 20px;
+        }
 
     </style>
     <script>
@@ -300,14 +314,14 @@
                         let image = rows[i]['image']
                         let author = rows[i]['author']
                         let reviewer = rows[i]['reviewer']
-                        {# 추가 #}
+                        // 추가
                         let time = rows[i]['time']
                         let star_image = '🌟'.repeat(star)
 
 
                         let temp_html = `<div class="col">
                                             <div class="card h-100">
-                                                <img src="${image}"
+                                                <img alt="" src="${image}"
                                                      class="card-img-top">
                                                 <div class="card-body">
                                                     <h5 class="card-title">${title}</h5>
@@ -388,12 +402,13 @@
         <h4>서민경</h4>
     </div>
     <div class="pagemove"><!-- 사이드바 하단 클릭시 페이지 이동하는 글씨 -->
-        <h2 style="text-align: center; margin-top: 40px;" href="#" onclick="location.href='/'">팀소개</h2>
-        <h2 style="text-align: center; margin-top: 40px;" href="#" onclick="location.href='/review'">독서리뷰</h2>
+       <h2 style="cursor: pointer; text-align: center; margin-top: 40px;" href="#" onclick="location.href='/'">팀소개</h2>
+        <h2 style="cursor: pointer; text-align: center; margin-top: 40px;" href="#" onclick="location.href='/review'">
+            독서리뷰</h2>
     </div>
 </div>
 <!-- 클릭시 메인 페이지 이동  -->
-<div class="mytitle" onclick="location.href='/'">
+<div style="cursor: pointer;" class="mytitle" onclick="location.href='/'"><!-- 상단 로고 -->
     <br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 </div>

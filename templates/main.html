@@ -356,8 +356,14 @@
 
         /* 링크 색 변경, 밑줄 제거*/
         .blog {
-            color: black;
+            color: gray;
             text-decoration-line: none;
+        }
+        .card-body {
+            font-family: 'HSBombaram21-Regular';
+        }
+        .card-text {
+            color: gray;
         }
 
 
@@ -366,7 +372,7 @@
         $(document).ready(function () {
             listing();
         });
-        {#팀원 정보 가져오기#}
+        //팀원 정보 가져오기
 
 
         function listing() {
@@ -393,7 +399,7 @@
                                                     <p class="card-text">MBTI : ${mbti}</p>
                                                     <p class="card-text">책 추천 : ${book}</p>
                                                     <a class='blog' href="${blog}"target="_blank">블로그 링크 ▶ ${name}님 블로그</a>
-                                                    <p class="card-text"><small class="text-muted">${time}</small></p>
+                                                    <p class="card-text"><small  class="text-muted">${time}</small></p>
                                                     <br><br><br><br>
                                                     <button class="delButton" onclick="del('${name}')" style="width: 60px; border:1px solid #b68a30; border-radius: 10px;color:#b68a30; background-color: white; ">
                                                     삭제 </button>
@@ -453,19 +459,20 @@
         <h4>서민경</h4>
     </div>
     <div class="pagemove"><!-- 사이드바 하단 클릭시 페이지 이동하는 글씨 -->
-        <h2 style="text-align: center; margin-top: 40px;" href="#" onclick="location.href='/'">팀소개</h2>
-        <h2 style="text-align: center; margin-top: 40px;" href="#" onclick="location.href='/review'">독서리뷰</h2>
+        <h2 style="cursor: pointer; text-align: center; margin-top: 40px;" href="#" onclick="location.href='/'">팀소개</h2>
+        <h2 style="cursor: pointer; text-align: center; margin-top: 40px;" href="#" onclick="location.href='/review'">
+            독서리뷰</h2>
     </div>
 </div>
 
 
-<div class="mytitle" onclick="location.href='/'"><!-- 상단 로고 -->
+<div style="cursor: pointer;" class="mytitle" onclick="location.href='/'"><!-- 상단 로고 -->
     <br><br><br><br><br><br><br><br><br><br><br><br><br>
 </div>
 
 <div class="mybtn">
     <button class="add" onclick="location.href='/record'"> 팀원 추가</button>
-    <button class="add" onclick="location.href='/review'">독서록 쓰기</button>
+    <button class="add" onclick="location.href='/review'">독서록 보기</button>
 </div>
 
 <div class="ALLPHOTO"> <!-- 사진 전체 묶음 -->

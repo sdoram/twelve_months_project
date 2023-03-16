@@ -5,247 +5,276 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>독서하는 12개월</title>
+
     <!-- 타이틀 옆 파비콘 넣기  -->
     <link rel="shortcut icon" type="image/x-icon"
           href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAx1JREFUWEftl0toE0Ech3/b3dnNpkn6SJpoK/aBqbVUaEuxUl8garVYUVpFRCl6UfTkyZvmIJ4KVcEnVisq4gNSFQSLaBVvCsWCJ7FY37bFNkmT3Z3Z3ZFECz5AwbTBQ+YysMPsfPPNLv/fCPjWhOvL6nza+8lGO8aXQLeCArXyYXHx+/i0dFzOiTNVfKGrOXffVDufdfYNxoXkm8OLF5fpH6PtNKq3c1uskQoKc9WSAEiuEzZRwCWSNgCnOozhN9DffYhSYvXreeR4eG7xI+H4ukZP4YtYB4/Q/baFcrW+Fp7Vy5FbNgfE5YQtTRMA06G/fIWJO/cx+fx5nErmufEKV6fQXVHTIH7RDyHB1iv+Isze3QHflg0Q5fR3PaWNcw7TtDjTdEw8eCSMdl9BbPh1v+aVQsJp37xWopkhkdr1SsCPkp3bMGvjWsgOghyRp63eEkVw2QFLELmmU8SGhoXPp3ow2nd/QFNyQsLR/PINqmGHFJPXCYQgd0ElPNWVcLtVqIqUNoBNCKQ5xXDU14IF/Ih8HEcSYKQ3/DvA1GqSJHKv2wWPw5H6SP+1WZzDAiB6C+BctRRSy2okJOffAWQioaSwAD6X61/XTs2zuA3dNKFRBhR5oWxvg1VXj5Gzl/9sQCESSn1eBPLz0gJITja5jUhCQ5wyKFtbgeY1+Nx9LXMASYiYYWAikYDc3gKhZS0+nb+RYQBGEYknQNrWZQGyBrIGsgayBrIG/h8DY7d7nxruXyLZVPGfzjyQKse/VsOLN63xu71h6iOHf8qEGQFobbFG7z0cHLna0/WuQgpnHIBs3RSNj4ydGDp4oGvXwMBoxgGcHZuHRDUvtHB+6aXUnfDHWD6TRxDVNMibmqlzR9tt1V1wJBgsG0gBXCivXIYxGhJ0e+VMAHBwRHUDcUZj8opFj9V9HScnGXvY1NSkpQBuNdYEIm/pXjtC94Da/uTD6fwLDNNERNM0Bv5ALvYd8/YcexwMBo2pzSYvHsKZqqoafGEbpRhrEBn3KERGqb8Qfk96sdzkFhIGZQnGXlGH2Mtk95Pmwb74j1n/K790smAB/Jv1AAAAAElFTkSuQmCC">
-    <title>독서하는 12개월</title>
     <style>
+    @font-face {
+        font-family: 'HSBombaram21-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/HSBombaram21-Regular.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'SangSangYoungestDaughter';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/SangSangYoungestDaughter.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        /* 폰트 교보문고, 사이드바 팀 이름 폰트 적용 */
+        font-family: 'KyoboHandwriting2021sjy';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KyoboHandwriting2021sjy.woff2') format('woff2');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    .mytitle {
+        color: white;
+        display: flex;
+        flex-direction: column-reverse;
+
+        background-color: rgb(255, 255, 255);
+        height: 400px;
+
+        background-image: url("https://i.ibb.co/GCqBHfy/mainlogo001.png");
+        align-items: center;
+        background-size: cover;
+        background-position: center;
+        font-family: 'HSBombaram21-Regular';
+    }
+
+    .find-add {
+        text-align: center;
+        padding: 35px 0px 35px 0px
+    }
+
+    .add {
+        display: inline-block;
+        width: 170px;
 
 
-        @font-face {
-            font-family: 'HSBombaram21-Regular';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/HSBombaram21-Regular.woff2') format('woff2');
-            font-weight: normal;
-            font-style: normal;
-        }
+        font-size: 20px;
+        font-family: 'HSBombaram21-Regular';
+        background-color: transparent;
+        color: #B68A30;
 
-        @font-face {
-            font-family: 'GangwonEdu_OTFBoldA';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        @font-face {
-            /* 사이드바 하단 앨범 보기 및 독서 리뷰 폰트 */
-            font-family: 'establishRoomNo703OTF';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRoomNo703OTF.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'SangSangYoungestDaughter';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/SangSangYoungestDaughter.woff') format('woff');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        @font-face {
-            /* 폰트 교보문고, 사이드바 팀 이름 폰트 적용 */
-            font-family: 'KyoboHandwriting2021sjy';
-            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KyoboHandwriting2021sjy.woff2') format('woff2');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        .mytitle {
-            color: white;
-
-            display: flex;
-            flex-direction: column-reverse;
-            align-items: center;
-
-            background-color: rgb(255, 255, 255);
-            background-image: url(https://i.ibb.co/GCqBHfy/mainlogo001.png);
-            background-position: center;
-            background-size: cover;
-
-            height: 400px;
-
-        }
+        border-radius: 50px;
+        border: 2px solid #B68A30;
+        align-items: center;
+        margin: 10px auto 10px auto;
 
 
-        .add {
-            display: inline-block;
-            width: 170px;
+    }
+
+    .add:hover {
+        background-color: #B68A30;
+        color: white
+    }
+
+    .box {
+        width: 500px;
+        margin: 30px auto 50px auto;
+        padding: 20px 20px 20px 20px;
+        box-shadow: 0px 0px 3px 0px gray;
+        justify-content: space-between
+    }
 
 
-            background-color: transparent;
-            color: #E0C080;
 
-            border-radius: 50px;
-            border: 1px solid #E0C080;
-            align-items: center;
-            text-align: center;
-            margin: 300px auto 0 auto;
-            padding: 10px 10px 10px 10px;
-        }
+    .find-btn {
+        text-align: center;
+        margin-bottom: 10px;
+    }
 
-        .add:hover {
-            background-color: #E0C080;
-            color: white
-        }
+    .btn {
+        display: inline-block;
+        background-color: #B68A30;
+        font-family: 'HSBombaram21-Regular';
 
-        .box {
-            width: 500px;
-            margin: 50px auto 50px auto;
-            padding: 20px 20px 20px 20px;
-            box-shadow: 0px 0px 3px 0px gray;
-            justify-content: space-between
-        }
+        font-size: 20px;
+        width: 170px;
+        padding: 5px 0px 5px 0px;
+        border: 2px solid #B68A30;
+        background-color: white;
+        color: #B68A30;
 
+        border-radius: 50px;
 
-        .find-btn {
-            text-align: center;
-            margin-bottom: 10px;
-        }
+        align-items: center;
+    }
 
-        .btn {
-            display: inline-block;
-            background-color: #E0C080;
+    .btn:hover {
+        background-color: #B68A30;
+        color: white
+    }
 
 
-            width: 170px;
-            height: 35px;
-            border: 1px solid #E0C080;
-            background-color: #E0C080;
-            color: white;
+    input[id="menuicon"] {
+        /* 오른쪽 상단 목차 아이콘 네모박스 틀 */
+        display: none;
+    }
 
-            border-radius: 50px;
+    input[id="menuicon"]+label {
+        /* 네모 박스 크기모양 및 위치 */
+        display: block;
+        width: 3%;
+        height: 3%;
+        position: fixed;
+        /* 위치 고정 */
+        right: 1%;
+        /* 체크하기 전 라벨의 위치 */
+        top: calc(10% - 25px);
+        transition: all .35s;
+        cursor: pointer;
+        /* 위에 올렸을 때 커서가 포인터로 보이게 */
+        margin: 20px;
+        /* 상하좌우 바깥 여백이 20픽셀 */
+    }
 
-            align-items: center;
-        }
+    input[id="menuicon"]:checked+label {
+        z-index: 2;
+        /* 위,아래 덮는 순서 숫자가 크면 덮습니다 */
+        right: 15%;
+        /* 라벨을 체크했을 때 위치가 오른쪽 기준 15% */
+    }
 
-        .btn:hover {
-            background-color: transparent;
-            color: #E0C080
-        }
+    input[id="menuicon"]+label span {
+        /* span은 막대기를 의미, span이 총 3개가 있는데 그 세개를 모두 지칭 */
+        display: block;
+        /*
+        일반적으로 설정하지 않아도 div가 갖게되는 기본값이다. (태그에 따라 기본값이 다를 수 있다.)
+        기본적으로 width 가 자신의 컨테이너의 100% 가 되게끔 한다.
+        쉽게 말하자면, 가로 한 줄을 다 차지하게 된다. */
+        position: absolute;
+        width: 70%;
+        height: 15%;
+        border-radius: 30px;
+        background: #000;
+        transition: all .35s;
+    }
 
-        input[id="menuicon"] {
-            display: none;
-        }
+    /* span 한줄 한줄의 위치를 의미. */
+    input[id="menuicon"]+label span:nth-child(1) {
+        top: 0;
+    }
 
-        input[id="menuicon"] + label {
-            display: block;
-            width: 3.5%;
-            height: 3%;
-            position: fixed;
-            right: 1%;
-            top: calc(25% - 25px);
-            transition: all .35s;
-            cursor: pointer;
-            margin: 20px;
-        }
+    input[id="menuicon"]+label span:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+    }
 
-        input[id="menuicon"]:checked + label {
-            z-index: 2;
-            right: 15%;
-        }
+    input[id="menuicon"]+label span:nth-child(3) {
+        bottom: 0;
+    }
 
-        input[id="menuicon"] + label span {
-            display: block;
-            position: absolute;
-            width: 80%;
-            height: 17%;
-            border-radius: 30px;
-            background: #000;
-            transition: all .35s;
-        }
+    /* span이 체크되었을 때에 위치 */
+    input[id="menuicon"]:checked+label span:nth-child(1) {
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+    }
 
-        input[id="menuicon"] + label span:nth-child(1) {
-            top: 0;
-        }
+    input[id="menuicon"]:checked+label span:nth-child(2) {
+        opacity: 0;
+    }
 
-        input[id="menuicon"] + label span:nth-child(2) {
-            top: 50%;
-            transform: translateY(-50%);
-        }
-
-        input[id="menuicon"] + label span:nth-child(3) {
-            bottom: 0;
-        }
-
-        input[id="menuicon"]:checked + label span:nth-child(1) {
-            top: 50%;
-            transform: translateY(-50%) rotate(45deg);
-        }
-
-        input[id="menuicon"]:checked + label span:nth-child(2) {
-            opacity: 0;
-        }
-
-        input[id="menuicon"]:checked + label span:nth-child(3) {
-            bottom: 50%;
-            transform: translateY(50%) rotate(-45deg);
-        }
-
-        div[class="sidebar"] {
-            width: 17%;
-            height: 300%;
-            background-color: #E0C080;
-            position: fixed;
-            top: 0;
-            right: -17%;
-            z-index: 1;
-            transition: all .35s;
-        }
-
-        input[id="menuicon"]:checked + label + div {
-            right: 0;
-        }
-
-        .footer {
-            font-family: 'HSBombaram21-Regular';
-            padding: 60px;
-            text-align: center;
-        }
-
-        /* mytitle에서 분리한 스타일 */
-        .mybtn {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto 10px auto;
-        }
-
-        .mybtn > .add {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            margin: 0px 10px 0 10px;
-            width: 170px;
-            height: 35px;
-
-            font-size: 20px;
-            background-color: transparent;
-            color: #B68A30;
-
-            border-radius: 50px;
-            border: 2px solid #B68A30;
-        }
-
-        .mybtn > button:hover {
-            background-color: #B68A30;
-            color: white;
-        }
-
-        /* 링크 색 변경, 밑줄 제거*/
-        .blog {
-            color: black;
-            text-decoration-line: none;
-        }
+    input[id="menuicon"]:checked+label span:nth-child(3) {
+        bottom: 50%;
+        transform: translateY(50%) rotate(-45deg);
+    }
 
 
-    </style>
+
+    div[class="sidebar"] {
+        width: 17%;
+        height: 300%;
+        background-color: #b68a30;
+        position: fixed;
+        top: 0;
+        right: -17%;
+        z-index: 1;
+        transition: all .35s;
+    }
+
+    input[id="menuicon"]:checked+label+div {
+        /* 사이드바랑 딸려 나오는 애 */
+        right: 0;
+    }
+
+    .footer {
+        font-family: 'HSBombaram21-Regular';
+        padding: 60px;
+        text-align: center;
+
+    }
+
+
+
+    .sidetop {
+        /* 사이드바 상단 독서하는 12개월 폰트 */
+        margin-top: 20%;
+        margin-bottom: 40%;
+        text-align: center;
+        font-family: 'SangSangYoungestDaughter';
+
+    }
+
+
+
+    .name {
+        /* 폰트 교보문고, 사이드바 팀 이름 폰트 적용 */
+        text-align: center;
+        margin-bottom: 40%;
+        font-family: 'KyoboHandwriting2021sjy';
+    }
+
+    .pagemove {
+        font-family: 'SangSangYoungestDaughter';
+        /* 사이드바 하단 앨범 보기 및 독서 리뷰 폰트 */
+    }
+
+    /* mytitle에서 분리한 스타일 */
+    .mybtn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 10px auto;
+    }
+
+    .mybtn>.add {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 10px 0 10px;
+        width: 170px;
+        height: 35px;
+
+        font-size: 20px;
+        background-color: transparent;
+        color: #B68A30;
+
+        border-radius: 50px;
+        border: 2px solid #B68A30;
+    }
+
+    .mybtn>button:hover {
+        background-color: #B68A30;
+        color: white;
+    }
+</style>
+
     <script>
-        {#팀원 정보 저장 함수#}
+        //팀원 정보 저장 함수
 
         function record() {
             let img = $("#img").val();
@@ -254,7 +283,7 @@
             let book = $("#book").val();
             let blog = $("#blog").val();
 
-            {#비어있는 입력값 체크#}
+            //비어있는 입력값 체크
             if (img == '') {
                 alert('사진URL을 입력해주세요!')
             } else if (name == '') {
@@ -284,73 +313,102 @@
             }
         }
     </script>
+
+
 </head>
 
 
+
 <body>
-<input type="checkbox" id="menuicon">
-<label for="menuicon">
-    <span></span>
-    <span></span>
-    <span></span>
-</label>
-<div class="sidebar">
-    <div style="text-align: center; margin-top: 50px;">
-        <h4>팀장 우소라</h4>
-        <h4>팀원 정현균</h4>
-        <h4>김세만</h4>
-        <h4>김성우</h4>
-        <h4>서민경</h4></div>
-    <!--클릭시 페이지 이동 기능  -->
-    <h2 style="text-align: center; margin-top: 40px;" href="#" onclick="location.href='/'">팀소개</h2>
-    <h2 style="text-align: center; margin-top: 40px;" href="#" onclick="location.href='/review'">독서리뷰</h2>
-</div>
-<!-- 클릭시 메인 페이지 이동  -->
-<div class="mytitle" onclick="location.href='/'">
+    <!-- 체크박스 아이콘 -->
+    <input type="checkbox" id="menuicon">
+    <label for="menuicon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
 
-    <button onclick="location.href='/'" class="add">메인가기</button>
+    <div class="sidebar"> <!-- 사이드바 -->
+        <div class="sidetop"> <!-- 사이드바 탑 -->
+            <h2> 12 MONTH </h2>
+            <h2> WITH READING </h2>
+        </div>
+        <p></p>
+        <p></p>
+        <p></p>
+        <div class="name"> <!-- 사이드바 팀멤버 이름-->
+            <h3>팀장</h3>
+            <h4>우소라</h4>
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+            <h3>팀원</h3>
+            <h4>정현균</h4>
+            <h4>김세만</h4>
+            <h4>김성우</h4>
+            <h4>서민경</h4>
+        </div>
+        <div class="pagemove"><!-- 사이드바 하단 클릭시 페이지 이동하는 글씨 -->
+            <h2 style="text-align: center; margin-top: 40px; cursor:pointer;" href="#"
+                onclick="location.href='/'">팀소개</h2>
+            <h2 style="text-align: center; margin-top: 40px; cursor:pointer;" href="#"
+                onclick="location.href='/review'">독서리뷰</h2>
 
-</div>
-
-
-<div class="box">
-    <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="img" placeholder="name@example.com"
-               style="margin-bottom: 30px;">
-        <label for="floatingInput">사진 url</label>
+        </div>
     </div>
 
-    <div class="form-floating">
+
+    <div class="mytitle" onclick="location.href='/'" style="cursor:pointer;"> </div>
+
+
+    <div class="find-add">
+        <button onclick="location.href='/'" class="add">메인가기 </button>
+    </div>
+
+    <div class="box">
+        <div class="form-floating mb-3">
+            <input type="url" class="form-control" id="img" placeholder="name@example.com"
+                style="margin-bottom: 30px;">
+            <label for="floatingInput">사진 url</label>
+        </div>
+
+        <div class="form-floating">
             <textarea class="form-control" placeholder="Leave a comment here" id="name"
-                      style="margin-bottom: 30px;"></textarea>
-        <label for="floatingTextarea">이름</label>
-    </div>
+                style="margin-bottom: 30px;"></textarea>
+            <label for="floatingTextarea">이름</label>
+        </div>
 
-    <div class="form-floating">
+        <div class="form-floating">
             <textarea class="form-control" placeholder="Leave a comment here" id="mbti"
-                      style="margin-bottom: 30px;"></textarea>
-        <label for="floatingTextarea"> MBTI </label>
-    </div>
-    <div class="form-floating">
+                style="margin-bottom: 30px;"></textarea>
+            <label for="floatingTextarea"> MBTI </label>
+        </div>
+
+        <div class="form-floating">
             <textarea class="form-control" placeholder="Leave a comment here" id="book"
-                      style="margin-bottom: 30px;"></textarea>
-        <label for="floatingTextarea">책추천</label>
-    </div>
-    <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="blog" placeholder="name@example.com"
-               style="margin-bottom: 30px;">
-        <label for="floatingInput">블로그 주소</label>
+                style="margin-bottom: 30px;"></textarea>
+            <label for="floatingTextarea">책추천</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="url" class="form-control" id="blog" placeholder="name@example.com"
+                style="margin-bottom: 30px;">
+            <label for="floatingInput">블로그 주소</label>
+        </div>
+
+        <div class="find-btn">
+            <button onclick="record()" class="btn">기록하기</button>
+        </div>
+
     </div>
 
-    <div class="find-btn">
-        <button onclick="record()" class="btn">기록하기</button>
+    <div class="footer">
+        <h6>copyright ©READING WITH 12MONTHS</h6>
     </div>
 
-</div>
 
-<div class="footer">
-    <h6>copyright ©READING WITH 12MONTHS</h6>
-</div>
+
 </body>
 
 
